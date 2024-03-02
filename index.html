@@ -4,198 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="first.js"></script>
     <title>Document</title>
 </head>
 <style>
-    body {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-        margin: 0;
-        background-color: black;
-    }
-
-    .main {
-        height: 385px;
-        display: flex;
-        justify-content: center;
-    }
-
-    .circle {
-        height: 300px;
-        width: 300px;
-        border-radius: 50%;
-        animation: circle 30s linear infinite;
-        filter: drop-shadow(0px 0px 10px red);
-    }
-
-    @keyframes circle {
-        0% {
-            transform: rotate(360deg);
-        }
-
-        100% {
-            transform: rotate(0deg)
-        }
-    }
-
-    .c {
-        position: relative;
-    }
-
-    .v {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* background:radial-gradient(red,black); */
-        border-radius: 50%;
-        bottom: 80px;
-
-        height: 700px;
-        width: 500px;
-        position: absolute;
-    }
-
-    .v img {
-        filter: drop-shadow(0px 0px 50px red);
-        height: 350px;
-        width: 250px;
-    }
-
-    .book {
-        /* margin-top: 70px; */
-        /* left: -20px; */
-        height: 250px;
-        width: 210px;
-        position: relative;
-        perspective: 1500px;
-        transition: transform;
-        transform: translateX(100px);
-        transition-duration: 5s;
-        animation: trans 1s linear;
-    }
-
-    @keyframes trans {
-        from {
-            transform: translateX(0px);
-        }
-
-        /* to{
-               transform: translateX(200px);
-            } */
-
-    }
-
-    .page {
-        border-left: none;
-        border-radius: 0px 20px 20px 0px;
-        position: absolute;
-        height: 100%;
-        font-size: 0.8rem;
-        font-weight: 700;
-        box-shadow: 0px 0px 50px #65350F;
-        width: 100%;
-        transition: transform 1.5s;
-        background: url("page3.jpg");
-        background-size: 230px 270px;
-        background-repeat: no-repeat;
-        background-position: center;
-        transform-origin: left;
-        transform-style: preserve-3d;
-        transform: rotateY(0deg);
-    }
-
-    .page1 {
-        /* background-color: #8B5A2B; */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* background-image: linear-gradient(#80471C,#9A784F); */
-        z-index: 4;
-
-
-    }
-
-    .page2 {
-        z-index: 3;
-        /* background-image: linear-gradient(#80471C,#9A784F); */
-    }
-
-    .page3 {
-        z-index: 2;
-        /* background-image: linear-gradient(#80471C,#9A784F); */
-    }
-    .page4 {
-        z-index: 1;
-        /* background-image: linear-gradient(#80471C,#9A784F); */
-    }
-
-    .backpage {
-        text-align: center;
-        transform: rotateY(-180deg);
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        box-sizing: border-box;
-        z-index: 99;
-        padding: 5px 20px;
-    }
-
-    .frontpage {
-        /* border: 2px solid white; */
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        display: inline-block;
-        box-sizing: border-box;
-        padding: 5px 20px;
-    }
-
-    .frontpage img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-    }
-
-    pre {
-        display: flex;
-        flex-direction: column;
-    }
-
-    p {
-        text-align: center;
-        visibility: hidden;
-        margin: 0px;
-        margin-bottom: 2px;
-        padding: 0;
-    }
-
-    .x {
-        visibility: visible;
-        overflow: hidden;
-        animation: typing 2s linear;
-        /* animation-delay:; */
-    }
-
-    @keyframes typing {
-        from {
-            /* text-align: center; */
-            /* visibility: visible; */
-            width: 0
-        }
-
-        to {
-            width: 100%;
-            visibility: visible;
-        }
-
-    }
+    
 </style>
 
 <body>
@@ -340,52 +154,18 @@
                 </div>
             </div>
         </div>
+        <div class="page5 page">
+             <div class="frontpage c">
+                </div>
+             <div class="backpage c">
+                <img src="back.jpg">
+             </div>
+        </div>
+            
 
     </div>
     <script>
-        function flip() {
-            let x = document.querySelector(".page1");
-            x.style.transform = "rotateY(-180deg)";
-            setTimeout(line, 300)
-        }
-
-        let i = 1;
-        function line() {
-            if (i <= 80) {
-
-                let y = document.querySelector(`.p${i}`);
-                y.classList.add('x');
-                i++
-                if (i == 25) {
-                    setTimeout(rotate, 2000)
-                }
-                if (i == 49) {
-                    setTimeout(rotate1, 2000)
-                }
-                if (i == 73) {
-                    setTimeout(rotate2, 2000)
-                }
-                setTimeout(line, 2000)
-            }
-        }
-
-        function rotate() {
-            let x = document.querySelector(".page2");
-            x.style.transform = "rotateY(-180deg)";
-            x.style.zIndex = 4;
-        }
-        function rotate1() {
-            let x = document.querySelector(".page3");
-            x.style.transform = "rotateY(-180deg)";
-            x.style.zIndex = 4;
-        }
-        function rotate2() {
-            let x = document.querySelector(".page4");
-            x.style.transform = "rotateY(-180deg)";
-            x.style.zIndex = 4;
-        }
-
-        setTimeout(flip, 2000)
+        
     </script>
 </body>
 
